@@ -11,6 +11,7 @@ pyr = ('T','C')
 
 @testset "Question 1" begin
     @test all(x-> compliment(x) isa Char, bases)
+    
     for i in 1:4
         @test compliment(bases[i]) == cbases[i]
         @test compliment(bases[i+4]) == cbases[i]
@@ -45,9 +46,9 @@ end
 
 @testset "Question 4" begin
     @test gc_content(join(bases)) == 0.5
-    @test gc_content(join(bases[1:5])) == 0.6
+    @test gc_content(join(bases[1:5])) == 0.4
     @test gc_content(lowercase(join(bases))) == 0.5
-    @test gc_content(lowercase(join(bases[1:5]))) == 0.6
+    @test gc_content(lowercase(join(bases[1:5]))) == 0.4
 end
 
 @testset "Question 5" begin
